@@ -474,14 +474,15 @@ body {
 /* Facts Grid */
 .facts-grid {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 3fr 3fr;
   gap: 12px;
 }
 
 .fact-card {
   display: flex;
-  gap: 12px;
+  gap: 18px;
   align-items: flex-start;
+ 
 }
 /* BeautyCart project screenshot */
 .project-card .project-shot {
@@ -528,7 +529,7 @@ body {
 .fact-card strong { display: block; font-size: 13px; margin-top: 2px; }
 .fact-card span { font-size: 11px; color: var(--text-muted); }
 
-.icon { font-size: 18px; margin-top: 3px; }
+.icon { font-size: 30px; margin-top: 3px; }
 .icon.blue { color: #3b82f6; }
 .icon.purple { color: #a855f7; }
 .icon.red { color: #ef4444; }
@@ -544,35 +545,50 @@ body {
 
 .muted-right { color: var(--text-muted); font-size: 13px; }
 
+
+
+
+
+
+
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 12px;
+  
 }
 
 .skill-grid .card h3 {
   font-size: 13px;
-  color: var(--primary-blue);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
+  
   gap: 8px;
+}
+.skill-grid .card h3 i {
+  size: 10px;
+  font-size: 25px;
+  color: #3b82f6;
 }
 
 .chips {
   display: flex;
   gap: 14px;
-  flex-wrap: wrap;
-  align-items: flex-end;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  
 }
 
 .skill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
-
+.card-title{
+  color: var(--primary-blue);
+}
 .skill-item svg,
 .skill-item img {
   width: 36px;
@@ -665,8 +681,8 @@ body {
 }
 
 .exp-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 60px;
   border-radius: 8px;
   background: rgba(168, 85, 247, 0.1);
   border: 1px solid #a855f7;
