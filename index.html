@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -891,7 +892,7 @@
           <p class="muted">I'm always open to discussing new opportunities, interesting projects or just tech!</p>
         </div>
         <div class="contact-buttons">
-          <a href="mailto:adityapal2t@gmail.com" class="btn-outline"><i class="fa-regular fa-envelope"></i>
+          <a href="mailto:adityapal4t@gmail.com" class="btn-outline"><i class="fa-regular fa-envelope"></i>
             adityapal4t@gmail.com</a>
           <a href="https://www.linkedin.com/in/aditya-pal901/" class="btn-outline"><i
               class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
@@ -904,6 +905,11 @@
 
   </main>
 
+  <!-- Tech Stack Marquee - just above Footer -->
+  <section class="tech-marquee">
+    <div class="marquee" id="marquee"></div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer border-top">
     <div class="container footer-inner">
@@ -912,7 +918,66 @@
           class="fa-solid fa-heart red-heart"></i></span>
     </div>
   </footer>
+   <script>
+    // Mobile menu: run only when the elements exist
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+
+    const stack = [
+       ["javascript/javascript-original.svg", "JavaScript"],
+      ["react/react-original.svg", "React"],
+      ["nodejs/nodejs-original.svg", "Node.js"],
+      ["python/python-original.svg", "Python"],
+      ["html5/html5-original.svg", "HTML5"],
+      ["css3/css3-original.svg", "CSS3"],
+      ["sass/sass-original.svg", "SASS"],
+      ["git/git-original.svg", "Git"], 
+      ["docker/docker-original.svg", "Docker"],
+      ["amazonwebservices/amazonwebservices-original-wordmark.svg", "AWS"],
+      ["bootstrap/bootstrap-original.svg", "Bootstrap"],
+      ["vuejs/vuejs-original.svg", "Vue.js"],
+      ["angularjs/angularjs-original.svg", "Angular"],
+      ["postgresql/postgresql-original.svg", "PostgreSQL"],
+    ];
+
+    const badge = ([file, label]) => `
+      <span class="mx-2 inline-flex items-center gap-2 whitespace-nowrap px-2 text-sm text-slate-200">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${file}" alt="" width="18" height="18" class="h-[18px] w-[18px] object-contain" />
+        ${label}
+      </span>`;
+
+    const marquee = document.getElementById("marquee");
+
+    if (marquee) {
+      const badges = stack.map(badge).join("");
+      marquee.innerHTML =
+        `<div class="marquee-track">${badges}</div><div class="marquee-track">${badges}</div>`;
+    }
+
+    const heat = document.getElementById("heatmap");
+    const levels = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"];
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 52 * 7; i++) {
+      const n = Math.random();
+      let lv = 0;
+      if (n > 0.42) lv = 1;
+      if (n > 0.62) lv = 2;
+      if (n > 0.8) lv = 3;
+      if (n > 0.93) lv = 4;
+      const el = document.createElement("span");
+      el.className = "heat-cell";
+      el.style.background = levels[lv];
+      frag.appendChild(el);
+    }
+    heat.appendChild(frag);
+  </script>
+<script src="scripts.js"></script>
 </body>
 
 </html>
